@@ -1,9 +1,17 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
+using TMPro;
+
 
 public class clickBread : MonoBehaviour
 {
-    int clicks = 0;
+    [SerializeField] private TMP_Text breadTextField;
+    int bread = 0;
+
+    void Start()
+    {
+        breadTextField.text = "Bread:\n" + bread;
+    }
 
     void Update()
     {
@@ -14,8 +22,9 @@ public class clickBread : MonoBehaviour
 
             if (hit.collider != null && hit.collider.gameObject == gameObject)
             {
-                clicks++;
-                Debug.Log("2D Object Clicked! Total clicks: " + clicks);
+                bread++;
+
+                breadTextField.text = "Bread:\n" + bread;
             }
         }
     }
