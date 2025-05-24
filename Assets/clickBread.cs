@@ -6,10 +6,13 @@ using TMPro;
 public class clickBread : MonoBehaviour
 {
     [SerializeField] private TMP_Text breadTextField;
-    int bread = 0;
+    int bread;
+    int bread_click;
 
     void Start()
     {
+        bread = 0;
+        bread_click = 1;
         breadTextField.text = "Bread:\n" + bread;
     }
 
@@ -22,7 +25,7 @@ public class clickBread : MonoBehaviour
 
             if (hit.collider != null && hit.collider.gameObject == gameObject)
             {
-                bread++;
+                bread += bread_click;
 
                 breadTextField.text = "Bread:\n" + bread;
             }
