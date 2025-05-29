@@ -603,7 +603,7 @@ GameObject:
   - component: {fileID: 1809668739}
   - component: {fileID: 1809668738}
   m_Layer: 0
-  m_Name: pixil-frame-0 (1)_0
+  m_Name: settingsIcon_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
