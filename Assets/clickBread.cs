@@ -5,15 +5,20 @@ using TMPro;
 
 public class clickBread : MonoBehaviour
 {
-    [SerializeField] private TMP_Text breadTextField;
+    [SerializeField] private TMP_Text bread_text_field;
+    [SerializeField] private TMP_Text bps_text_field;
+
     int bread;
-    int bread_click;
+    int bread_per_click;
+    int bread_per_second;
 
     void Start()
     {
         bread = 0;
-        bread_click = 1;
-        breadTextField.text = "Bread:\n" + bread;
+        bread_per_click = 1;
+        bread_per_second = 0;
+        bread_text_field.text = "Bread:\n" + bread;
+        bps_text_field.text = "BPS:\n" + bread_per_second;
     }
 
     void Update()
@@ -25,9 +30,9 @@ public class clickBread : MonoBehaviour
 
             if (hit.collider != null && hit.collider.gameObject == gameObject)
             {
-                bread += bread_click;
+                bread += bread_per_click;
 
-                breadTextField.text = "Bread:\n" + bread;
+                bread_text_field.text = "Bread:\n" + bread;
             }
         }
     }
